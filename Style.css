@@ -690,8 +690,8 @@ h1 {
 }
 
 .blog-img{
-     height: 500px;
-    width: 700px;
+    height: 400px;
+    width: 500px
     position: relative;
     object-fit: cover;
 }
