@@ -1,0 +1,697 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+}
+
+body {
+    margin: 0px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 2rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+    --bg-color: #121212;
+    --text-color: #f5f5f5;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+.checkbox-apple {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    margin: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checkbox-apple label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 25px;
+    border-radius: 50px;
+    background: linear-gradient(to bottom, #b3b3b3, #e6e6e6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkbox-apple label:after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.checkbox-apple input[type="checkbox"]:checked+label {
+    background: linear-gradient(to bottom, #fec0aa, #fb936e);
+}
+
+.checkbox-apple input[type="checkbox"]:checked+label:after {
+    transform: translateX(25px);
+}
+
+.checkbox-apple label:hover {
+    background: linear-gradient(to bottom, #b3b3b3, #e6e6e6);
+}
+
+.checkbox-apple label:hover:after {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.yep {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 25px;
+}
+
+.logo {
+    height: 30px;
+    width: 110px;
+}
+
+.heading {
+    font-size: 100px;
+    font-family: "Arial", "Helvetica", sans-serif;
+    letter-spacing: 20px;
+    font-weight: bold;
+    color: #fb5531;
+    transition: text-shadow 0.3s ease;
+}
+
+.heading:hover {
+    text-shadow: 0 0 5px #fb5531, 0 0 5px #fb5531, 0 0 5px #fb5531;
+}
+
+.header2 {
+    font-size: 15px;
+    font-family: "Akzidenz Grotesk";
+}
+
+.header2 {
+    font-size: 11px;
+}
+
+.heading-small {
+    font-size: 40px;
+    font-family: "Arial", "Helvetica", sans-serif;
+    letter-spacing: 10px;
+    font-weight: bold;
+    color: #fb5531;
+    transition: text-shadow 0.3s ease;
+}
+
+.heading-small:hover {
+    text-shadow: 0 0 5px #fb5531, 0 0 5px #fb5531, 0 0 5px #fb5531;
+}
+
+.glowing-button {
+    padding: 6px 16px;
+    background: transparent;
+    color: black;
+    border: 2px solid #fb5531;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 5px #fb5531, 0 0 10px #fb5531;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+}
+
+.glowing-button:hover {
+    background: #fb5531;
+    color: var(--text-color);
+    box-shadow: 0 0 10px #fb5531, 0 0 20px #fb5531, 0 0 40px #fb5531;
+}
+
+.explore-heading {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+}
+
+.search-wrapper {
+    width: 100%;
+    max-width: 600px;
+}
+
+.search-box {
+    position: relative;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.search-box i {
+    color: var(--text-secondary);
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.search-box:focus-within i {
+    transform: scale(1.1);
+    color: var(--accent);
+}
+
+.search-field {
+    border: none;
+    background: none;
+    color: var(--text-primary);
+    font-size: 16px;
+    width: 100%;
+    padding: 4px 0;
+}
+
+.search-field:focus {
+    outline: none;
+}
+
+.header2,
+.text,
+.card-title,
+.icon,
+.search-btn {
+    color: var(--text-color);
+}
+
+
+.search-btn {
+    font-family: "Akzidenz Grotesk";
+    height: 35px;
+    padding: 0 16px;
+    background-color: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid #fb5531;
+    font-weight: bold;
+    line-height: 35px;
+    white-space: nowrap;
+    color: #fb5531;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #fb5531;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.box {
+    font-family: "Akzidenz Grotesk";
+    background-color: transparent;
+    border-style: solid;
+    border-radius: 12px;
+    border-width: 1px;
+    color: #fff;
+    margin: 12px;
+    height: 190px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.icons {
+    background-color: #fec0aa;
+    height: 160px;
+    width: 200px;
+    border-radius: 50%;
+    color: #fb5531;
+    border: 2px solid #fd9574;
+}
+
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.search-result {
+    margin-bottom: 60px;
+    width: 30%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.search-result:hover img {
+    transform: scale(1.05);
+}
+
+.search-result img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.search-result a {
+    padding: 10px;
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.search-result:hover a {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+@media screen and (max-width: 768px) {
+    .search-result {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search-result {
+        width: 100%;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    #search-input {
+        margin-bottom: 20px;
+        width: 85%;
+    }
+}
+
+.show-more-btn {
+    border: none;
+    border-radius: 5px;
+    color: var(--text-color);
+}
+
+.scroll-wrapper {
+    width: 100%;
+    overflow: hidden;
+    padding: 16px 0;
+}
+
+.scroll-track {
+    display: flex;
+    gap: 24px;
+    animation: scroll-left 10s linear infinite;
+}
+
+.scroll-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-style: preserve-3d;
+    display: block;
+}
+
+.scroll-img:hover {
+    transform: translateZ(-10px) scale(0.95);
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scroll-swing {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.scroll-track {
+    display: flex;
+    gap: 10px;
+    animation: scroll-swing 15s linear infinite alternate;
+}
+
+.three-text {
+    font-family: "Akzidenz Grotesk";
+    font-weight: 300;
+    text-align: center;
+}
+
+.three-text-sub {
+    font-family: "Akzidenz Grotesk";
+    font-weight: 300;
+    text-align: center;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: block;
+}
+
+.card-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.image-text {
+    font-family: "Akzidenz Grotesk";
+    font-size: 65px;
+    font-weight: 500;
+    margin: 8px;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.parent div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.hero-tile {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-style: preserve-3d;
+    display: block;
+}
+
+.hero-tile:hover {
+    transform: translateZ(-10px) scale(0.95);
+}
+
+.bottom-left {
+    grid-row: span 3 / span 3;
+    grid-column-start: 1;
+    grid-row-start: 3;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-style: preserve-3d;
+    display: block;
+}
+
+.bottom-left:hover {
+    transform: translateZ(-10px) scale(0.95);
+}
+
+.bottom-mid-left {
+    grid-row: span 3 / span 3;
+    grid-column-start: 2;
+    grid-row-start: 3;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-style: preserve-3d;
+    display: block;
+}
+
+.bottom-mid-left:hover {
+    transform: translateZ(-10px) scale(0.95);
+}
+
+.top-right-tall {
+    grid-row: span 3 / span 3;
+    grid-column-start: 3;
+    grid-row-start: 1;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-style: preserve-3d;
+    display: block;
+}
+
+.top-right-tall:hover {
+    transform: translateZ(-10px) scale(0.95);
+}
+
+.bottom-right-small {
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 4;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-style: preserve-3d;
+    display: block;
+}
+
+.bottom-right-small:hover {
+    transform: translateZ(-10px) scale(0.95);
+}
+
+.top-right-short {
+    grid-row: span 2 / span 2;
+    grid-column-start: 4;
+    grid-row-start: 1;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-style: preserve-3d;
+    display: block;
+}
+
+.top-right-short:hover {
+    transform: translateZ(-10px) scale(0.95);
+}
+
+.mid-right {
+    grid-row: span 3 / span 3;
+    grid-column-start: 4;
+    grid-row-start: 3;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-style: preserve-3d;
+    display: block;
+}
+
+.mid-right:hover {
+    transform: translateZ(-10px) scale(0.95);
+}
+
+.right-tall {
+    grid-row: span 3 / span 3;
+    grid-column-start: 5;
+    grid-row-start: 1;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-style: preserve-3d;
+    display: block;
+}
+
+.right-tall:hover {
+    transform: translateZ(-10px) scale(0.95);
+}
+
+.right-bottom {
+    grid-row: span 2 / span 2;
+    grid-column-start: 5;
+    grid-row-start: 4;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-style: preserve-3d;
+    display: block;
+}
+
+.right-bottom:hover {
+    transform: translateZ(-10px) scale(0.95);
+}
+
+.headline {
+    font-family: "Akzidenz Grotesk";
+    font-weight: 500;
+    margin-top: 100px;
+}
+
+.headline-sub {
+    font-size: 24px;
+    font-family: "Akzidenz Grotesk";
+    font-weight: 500;
+}
+
+.down-heading {
+    font-size: 24px;
+    font-family: "Bernhard Modern";
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.explore-suggestion-btn {
+    height: px;
+}
+
+.social-icon {
+    text-align: center;
+}
+
+.footer-link,
+.footer-icon {
+    color: grey;
+    transition: color 0.2s ease;
+    cursor: pointer;
+}
+
+.footer-link:hover,
+.footer-icon:hover {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.right {
+    text-align: right;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+::root {
+    --text-color: #000000;
+}
+
+.about-image {
+    height: 200px;
+    width: 300px;
+}
+
+h1 {
+    color: var(--text-color);
+    font-size: 40px
+}
+
+.image {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+    padding: 20px;
+    height: 600px;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.browsing-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 7px;
+    border: none;
+    margin-right: 20px;
+}
+
+.home-btn {
+    background-color: transparent;
+    color: #000;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid #000;
+}
+
+.com-img {
+    width: 500px;
+    object-fit: cover;
+}
+
+.community-maintenance {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bi-x{
+    font-size: 30px;
+    color: #000000
+}
+
+.accordion-item {
+    background-color: #e9f5ff;
+    border-top: 10px solid #000;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #000;
+}
+
+.card-body {
+    border-left: 10px solid #000;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.fqa-bg {
+    background-image: url('https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    width: 100vh
+    background-size: cover;
+}
+
+.question-img {
+    border-radius: 10px;
+    height: 350px;
+}
+
+.down {
+    font-size: 35px;
+}
+
+.blog-img{
+     height: 500px;
+    width: 700px;
+    position: relative;
+    object-fit: cover;
+}

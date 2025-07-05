@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <img class="logo" src="https://res.cloudinary.com/dtks8td3d/image/upload/v1750352679/shot_cz9ozn.png">
+        <div class="checkbox-apple ml-auto">
+            <input class="yep" id="check-apple" type="checkbox">
+            <label for="check-apple"></label>
+        </div>
+    </nav>
+    <div>
+        <div class="container mt-5 pd-5" id="explore">
+            <div class="row">
+                <div class="col-12 col-lg-12 clg-md-12 col-xl-12 d-md-none d-sm-block">
+                    <h1 class="heading-small d-flex flex-row justify-content-center">
+                        PixFindr
+                    </h1>
+                </div>
+                <div class="col-12 col-lg-12 clg-md-12 col-xl-12 d-none d-md-block">
+                    <h1 class="heading d-flex flex-row justify-content-center">
+                        PixFindr
+                    </h1>
+                </div>
+                <div class="container col-12">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h4 class="header1 d-flex flex-row justify-content-center">Explore the Infinite World of Images</h4>
+                            <h6 class="header2 d-flex flex-row justify-content-center">Search for anything animals, places, objects, art, and more...</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form id="form" class="col-12">
+            <div class="search d-flex flex-row justify-content-center">
+                <div class="search-wrapper">
+                    <div class="search-box shadow-lg">
+                        <i class="bi bi-search"></i>
+                        <input id="searchInput" type="text" placeholder="Search..." class="search-field">
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-row justify-content-center mt-3" id="suggestions">
+                <button class="glowing-button" id="searchBtn">Search</button>
+            </div>
+        </form>
+        <div class="container col-12 mt-5">
+            <div class="row">
+                <div class="col-12">
+                    <p class="d-flex flex-row justify-content-center">Popular searches:</p>
+                    <ul id="btns"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="container col-12 mt-5" id="cards">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="box shadow-lg text-center">
+                        <h4 class="card-title pt-4">Nature & Wildlife</h4>
+                        <i class="bi bi-globe-central-south-asia icon icons p-2" style="color: #fb5531;"></i>
+                        <p class="text pt-3 m-1">Explore animals, forests, oceans, and many more.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="box shadow-lg text-center">
+                        <h4 class="card-title pt-4">Places & Architecture</h4>
+                        <i class="bi bi-bank2 icon icons p-2" style="color: #fb5531;"></i>
+                        <p class="text pt-3">View buildings, cities, landmarks, travel spots.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="box shadow-lg text-center">
+                        <h4 class="card-title pt-4"> Art & Photography</h4>
+                        <i class="bi bi-camera icon icons p-2" style="color: #fb5531;"></i>
+                        <p class="text pt-3">Find digital art, paintings, and stunning photos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="searchResults" class="search-results">
+        </div>
+        <div class="d-flex flex-row justify-content-center">
+            <button id="showMore" class="show-more-btn mb-3 d-none"> <i class="bi bi-arrow-down-circle circle"></i></button>
+        </div>
+        <div class="scroll-wrapper mt-5" id="imageScroller"></div>
+        <div class="card text-white card-img mt-5">
+            <img src="https://res.cloudinary.com/dtks8td3d/image/upload/v1714317482/cld-sample.jpg" class="card-img" alt="Image">
+            <div class="card-img-overlay">
+                <h1 class="image-text p-3">PixFindr Spotlight</h1>
+            </div>
+        </div>
+        <div class="d-flex flex-row justify-content-center mt-5">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                        <h1 class="three-text">High Quality</h1>
+                        <p class="three-text-sub">Images</p>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <h1 class="three-text">7.4 M</h1>
+                        <p class="three-text-sub">Photos</p>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <h1 class="three-text">403.5K</h1>
+                        <p class="three-text-sub">Photographers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="parent mt-5">
+            <div class="hero-tile">
+                <img src="https://res.cloudinary.com/dtks8td3d/image/upload/v1714317481/samples/woman-on-a-football-field.jpg" alt="Hero Tile">
+            </div>
+            <div class="card bottom-left">
+                <img src="https://res.cloudinary.com/dtks8td3d/image/upload/v1714317479/samples/coffee.jpg" alt="Bottom Left">
+            </div>
+            <div class="bottom-mid-left">
+                <img src="https://res.cloudinary.com/dtks8td3d/image/upload/v1714317478/samples/chair-and-coffee-table.jpg" alt="Bottom Mid Left">
+            </div>
+            <div class="top-right-tall">
+                <img src="https://res.cloudinary.com/dtks8td3d/image/upload/v1714317474/samples/balloons.jpg" alt="Top Right Tall">
+            </div>
+            <div class="bottom-right-small">
+                <img src="https://res.cloudinary.com/dtks8td3d/image/upload/v1714317474/samples/shoe.jpg" alt="Bottom Right Small">
+            </div>
+            <div class="top-right-short">
+                <img src="https://res.cloudinary.com/dtks8td3d/image/upload/v1750939876/banner-image3_-_Copy_w7yh4h.jpg" alt="Top Right Short">
+            </div>
+            <div class="mid-right">
+                <img src="https://res.cloudinary.com/dtks8td3d/image/upload/v1714317460/samples/food/spices.jpg" alt="Mid Right">
+            </div>
+            <div class="right-tall">
+                <img src="https://res.cloudinary.com/dtks8td3d/image/upload/v1714317457/samples/ecommerce/car-interior-design.jpg" alt="Right Tall">
+            </div>
+            <div class="right-bottom">
+                <img src="https://res.cloudinary.com/dtks8td3d/image/upload/v1714317477/samples/man-on-a-escalator.jpg" alt="Right Bottom">
+            </div>
+        </div>
+        <div class="titlee mt-5">
+            <h1 class="headline d-flex justify-content-center">
+                Find the Perfect Image - Before You Finish Typing
+            </h1>
+            <h4 class="headline-sub d-flex justify-content-center">
+                Instant visual discovery. Curated. Fast. Free.
+            </h4>
+            <div class="d-flex flex-row justify-content-center mt-3">
+                <button class="m-3" onclick="document.getElementById('explore').scrollIntoView({ behavior: 'smooth' });">Explore<i class="bi bi-arrow-up-right-square ml-2"></i></button>
+                <button class="m-3" onclick="document.getElementById('suggestions').scrollIntoView({ behavior: 'smooth' });">Suggestions<i class="bi bi-arrow-up-right-square ml-2"></i></button>
+            </div>
+        </div>
+        <div class="mt-5">
+            <h4 class="down-heading ml-3">PixFindr</h4>
+        </div>
+        <div class="footer">
+            <div class="d-flex flex-row">
+                <div class="col-md-3 col-sm-3 mt-3">
+                    <p><a class="footer-link" href="/aboutUs.html">About Us</a></p>
+                    <p><a class="footer-link" href="/blog.html">Blog</a></p>
+                    <p> <a class="footer-link" href="/community.html">Community</a></p>
+                </div>
+                <div class="col-md-3 col-sm-3 mt-3">
+                    <p class="footer-link">Terms</p>
+                    <p class="footer-link">Press</p>
+                    <p><a class="footer-link" href="/helpcenter.html">Help Center</a></p>
+                </div>
+                <div class="col-md-3 col-sm-3 mt-3">
+                    <p class="footer-link">Pixfindr Image</p>
+                    <p class="footer-link">Pixfindr Web</p>
+                </div>
+                <div class="col-md-3 col-sm-3 mt-3 social-icon">
+                    <a href="http://www.linkedin.com/in/manojaelishala" target="_blank">
+                        <i class="bi bi-linkedin footer-icon ml-2"></i>
+                    </a>
+                    <a href="https://www.instagram.com/manoj.xviii" target="_blank">
+                        <i class="bi bi-instagram footer-icon ml-2"></i>
+                    </a>
+                    <a href="" target="_blank">
+                        <i class="bi bi-facebook footer-icon ml-2"></i>
+                    </a>
+                    <a href="https://github.com/Manoj-alishala" target="_blank">
+                        <i class="bi bi-github footer-icon ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <footer class=" col-12 mt-5 d-flex flex-row">
+            <div class="col-6">
+                <p>Make something awesome.</p>
+            </div>
+            <div class="col-3 right">
+                <i class="footer-link">Privacy Policy</i>
+            </div>
+            <div class="col-3 ml-3 right">
+                <i class="footer-link">Security</i>
+            </div>
+        </footer>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
