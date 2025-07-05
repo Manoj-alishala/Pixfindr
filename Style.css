@@ -695,3 +695,10 @@ h1 {
     position: relative;
     object-fit: cover;
 }
+
+.blog-img-small{
+    height: 300px;
+    width: 400px
+    position: relative;
+    object-fit: cover;
+}
